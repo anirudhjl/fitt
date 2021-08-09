@@ -1,0 +1,28 @@
+<mat-drawer-container class="example-sidenav-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <ul>
+      <li><a routerLink="/workout/plans">Workout Plans</a></li>
+      <li><a routerLink="/workout/types">Workout Types</a></li>
+      <hr />
+      <li><a routerLink="/meals/breakfast">Breakfast</a></li>
+      <li><a routerLink="/meals/lunch">Lunch</a></li>
+      <li><a routerLink="/meals/dinner">Dinner</a></li>
+      <hr />
+      <li><a routerLink="/profile">Profile</a></li>
+    </ul>
+  </mat-drawer>
+  <div class="header">
+    <div class="example-sidenav-content">
+      <img
+        src="../../../assets/Images/menu.png"
+        alt="menu"
+        (click)="drawer.toggle()"
+      />
+      <a routerLink="">
+        <img src="../../../assets/Images/logo.jpg" alt="logo"
+      /></a>
+      <a routerLinkActive routerLink="/login" class="loginButton">Login</a>
+      <a class="loginButton" hidden (click)="logout()">Logout</a>
+    </div>
+  </div>
+</mat-drawer-container>

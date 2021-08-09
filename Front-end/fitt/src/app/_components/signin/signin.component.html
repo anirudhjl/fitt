@@ -1,0 +1,66 @@
+<div class="container-fluid" id="signin">
+  <form [formGroup]="signinform" (ngSubmit)="onSubmit()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <div class="alert alert-danger" role="alert">{{ validMessage }}</div>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First name</label>
+      <input
+        type="text"
+        name="firstName"
+        class="form-control"
+        [(ngModel)]="user.firstName"
+        formControlName="firstName"
+        required
+      /><br />
+      <label for="lastName">Last name</label>
+      <input
+        type="text"
+        name="lastName"
+        class="form-control"
+        [(ngModel)]="user.lastName"
+        formControlName="lastName"
+        required
+      /><br />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="user.email"
+        formControlName="email"
+        maxlength="40"
+        required
+        minlength="12"
+      />
+      <br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="user.password"
+        formControlName="password"
+        required
+        maxlength="25"
+        minlength="8"
+      />
+      <br />
+      <button type="submit" class="btn btn-dark">Signin</button><br /><br />
+    </div>
+  </form>
+  <!-- <div class="row">
+    <div class="col-3">
+      <a href="http://www.facebook.com" target="_blank"
+        ><button class="btn btn-primary" id="facebook">
+          Signin with facebook
+        </button>
+      </a>
+    </div>
+    <div class="col-3">
+      <a href="http://www.google.com" target="_blank">
+        <button class="btn btn-light" id="google">Signin with Google</button></a
+      >
+    </div>
+  </div> -->
+</div>

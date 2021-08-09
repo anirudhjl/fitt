@@ -1,0 +1,36 @@
+<div class="container-fluid" id="login">
+  <form [formGroup]="loginform" (ngSubmit)="onSubmit()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <div class="alert alert-danger" role="alert">{{ validMessage }}</div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="user.email"
+        formControlName="email"
+        maxlength="40"
+        required
+        minlength="12"
+      />
+      <br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="user.password"
+        formControlName="password"
+        required
+        maxlength="25"
+        minlength="8"
+      />
+      <br />
+      <button type="submit" class="btn btn-dark" id="loginButton">Login</button>
+      <br /><br />
+      <a routerLink="/signin" id="link">Don't have an account</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,52 @@
+img {
+  width: 40px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+a img {
+  width: 140px;
+  height: 60px;
+  float: left;
+}
+
+.loginButton {
+  position: absolute;
+  padding: 2%;
+  top: 0;
+  right: 0;
+}
+
+.example-sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.example-sidenav-content {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 10px;
+  width: 200px;
+}
+
+li {
+  list-style-type: none;
+}
+
+mat-drawer a {
+  color: #949494;
+  font-size: large;
+  text-decoration: none;
+}
+
+mat-drawer a:hover {
+  color: #000;
+}

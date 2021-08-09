@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <h2>Body Weight</h2>
+  <div class="card border-secondary" *ngFor="let exercise of BodyWeightData">
+    <div class="card-body">
+      <div class="media row">
+        <img class="col align-self-center" src="{{ exercise.imageUrl }}" />
+        <div class="col-sm-6">
+          <h4 class="card-title">{{ exercise.name }}</h4>
+          <div class="card-text">
+            <p>{{ exercise.description }}</p>
+            <br />
+            <div class="row">
+              <div class="col-sm-6">
+                <p><b>Reps:</b> {{ exercise.reps }}</p>
+                <p><b>Sets:</b> {{ exercise.sets }}</p>
+              </div>
+              <div class="col-sm-6">
+                <p><b>Duration:</b> {{ exercise.duration }} g</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+</div>

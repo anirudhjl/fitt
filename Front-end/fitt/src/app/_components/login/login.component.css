@@ -1,0 +1,28 @@
+.form-group {
+  width: 50%;
+}
+
+button {
+  padding: 5px;
+  float: left;
+}
+
+#loginButton {
+  padding: 6px 12px;
+}
+
+#link {
+  color: #949494;
+  padding: 1% 0;
+  font-size: large;
+  text-decoration: none;
+}
+
+#link:hover,
+#link:active {
+  color: #000;
+}
+
+.alert {
+  width: 50%;
+}
