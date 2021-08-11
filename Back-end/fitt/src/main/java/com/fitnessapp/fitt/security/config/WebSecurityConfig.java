@@ -28,18 +28,18 @@ import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
-@AllArgsConstructor
+//@AllArgsConstructor
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private final AppUserService appUserService;
+    private  AppUserService appUserService;
+
+//    @Autowired
+//    private  JwtUtil jwtUtil;
 
     @Autowired
-    private final JwtUtil jwtUtil;
-
-    @Autowired
-    private final AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/v*/registration/**", "/auth").permitAll()
+                .antMatchers("/api/v*/registration/**", "/auth", "/login").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -73,25 +73,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(appUserService);
-    }
-
-    @RequestMapping(value = "/auth", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
-        try {
-            authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword()));
-        } catch (BadCredentialsException e) {
-            throw new Exception("Incorrect email or password", e);
-        }
-
-        final UserDetails userDetails = appUserService
-                .loadUserByUsername(authenticationRequest.getEmail());
-        final String jwt = jwtUtil.generateToken(userDetails);
-
-        return ResponseEntity.ok(new AuthenticationResponse(jwt));
+        //auth.userDetailsService(appUserService);
     }
 }

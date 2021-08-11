@@ -95,7 +95,7 @@ import { ConfirmationComponent } from './_components/confirmation/confirmation.c
     DinnerService,
     AuthService,
     AuthGuardService,
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    //{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
   ],
   bootstrap: [AppComponent],

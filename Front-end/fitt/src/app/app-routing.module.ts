@@ -39,11 +39,15 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuardService],
   },
-  { path: 'meals', component: MealsComponent, canActivate: [AuthGuardService] },
+  {
+    path: 'meals',
+    component: MealsComponent,
+    canActivate: [AuthGuardService],
+  },
   {
     path: 'meals/lunch',
     component: LunchComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
   },
   {
     path: 'meals/breakfast',

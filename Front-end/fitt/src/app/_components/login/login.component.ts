@@ -53,7 +53,11 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token', 'loggedIn');
             this.router.navigateByUrl('');
           },
-          (error: HttpErrorResponse) => console.log(error.status)
+          (error: HttpErrorResponse) => {
+            console.log(error.status);
+            console.log(this.user.email +":" + this.user.password)
+            this.validMessage = 'Incorrect credentials entered';
+          }
         );
     } else this.validMessage = 'Please enter valid credentials';
   }
