@@ -11,17 +11,8 @@ export class GymstrongComponent implements OnInit {
   constructor(private GymStrongService: GymStrongService) {}
 
   ngOnInit() {
-    this.getGymStrong();
-  }
-
-  getGymStrong() {
-    const subscription = this.GymStrongService.getGymStrong().subscribe(
-      (data) => {
-        this.GymStrongData = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Gym Strong data loaded')
+    this.GymStrongService.getGymStrong().subscribe(
+      (data) => (this.GymStrongData = data)
     );
-    subscription.unsubscribe();
   }
 }

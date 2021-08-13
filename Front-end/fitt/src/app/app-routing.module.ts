@@ -1,6 +1,6 @@
 import { ConfirmationComponent } from './_components/confirmation/confirmation.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '@components/login/login.component';
 import { SigninComponent } from '@components/signin/signin.component';
 import { HomeComponent } from '@components/home/home.component';
@@ -47,7 +47,7 @@ const routes: Routes = [
   {
     path: 'meals/lunch',
     component: LunchComponent,
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
   },
   {
     path: 'meals/breakfast',

@@ -11,17 +11,8 @@ export class StrengthComponent implements OnInit {
   constructor(private StrengthService: StrengthService) {}
 
   ngOnInit() {
-    this.getStrength();
-  }
-
-  getStrength() {
-    const subscription = this.StrengthService.getStrength().subscribe(
-      (data) => {
-        this.StrengthData = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Strength data loaded')
+    this.StrengthService.getStrength().subscribe(
+      (data) => (this.StrengthData = data)
     );
-    subscription.unsubscribe();
   }
 }

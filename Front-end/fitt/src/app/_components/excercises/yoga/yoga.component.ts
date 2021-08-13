@@ -11,17 +11,6 @@ export class YogaComponent implements OnInit {
   constructor(private YogaService: YogaService) {}
 
   ngOnInit() {
-    this.getYoga();
-  }
-
-  getYoga() {
-    const subscription = this.YogaService.getYoga().subscribe(
-      (data) => {
-        this.YogaData = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Yoga data loaded')
-    );
-    subscription.unsubscribe();
+    this.YogaService.getYoga().subscribe((data) => (this.YogaData = data));
   }
 }

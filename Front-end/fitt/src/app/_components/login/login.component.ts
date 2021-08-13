@@ -50,12 +50,15 @@ export class LoginComponent implements OnInit {
         .subscribe(
           (data) => {
             console.log(data);
-            localStorage.setItem('token', 'loggedIn');
+            localStorage.setItem(
+              'token',
+              btoa(this.user.email + ':' + this.user.password)
+            );
             this.router.navigateByUrl('');
           },
           (error: HttpErrorResponse) => {
             console.log(error.status);
-            console.log(this.user.email +":" + this.user.password)
+            console.log(this.user.email + ':' + this.user.password);
             this.validMessage = 'Incorrect credentials entered';
           }
         );

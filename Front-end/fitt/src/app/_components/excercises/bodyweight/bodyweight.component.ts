@@ -11,17 +11,8 @@ export class BodyweightComponent implements OnInit {
   constructor(private BodyWeightService: BodyWeightService) {}
 
   ngOnInit() {
-    this.getBodyWeight();
-  }
-
-  getBodyWeight() {
-    const subscription = this.BodyWeightService.getBodyWeight().subscribe(
-      (data) => {
-        this.BodyWeightData = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Body Weight data loaded')
+    this.BodyWeightService.getBodyWeight().subscribe(
+      (data) => (this.BodyWeightData = data)
     );
-    subscription.unsubscribe();
   }
 }

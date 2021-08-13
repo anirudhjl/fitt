@@ -1,8 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IMeals } from 'src/app/_models/Meals';
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+const headers = {
+  'Content-Type': 'application/json',
+  Authorization: `Basic ${localStorage.getItem('token')}`,
 };
 
 @Injectable({
@@ -12,6 +14,8 @@ export class LunchService {
   constructor(private http: HttpClient) {}
 
   getLunch() {
-    return this.http.get('/server/api/v1/lunch');
+    return this.http.get<IMeals[]>('http://localhost:8080/api/v1/lunch', {
+      headers,
+    });
   }
 }

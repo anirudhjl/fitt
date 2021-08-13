@@ -11,17 +11,8 @@ export class DinnerComponent implements OnInit {
   constructor(private dinnerService: DinnerService) {}
 
   ngOnInit() {
-    this.getDinner();
-  }
-
-  getDinner() {
-    const subscription = this.dinnerService.getDinner().subscribe(
-      (data) => {
-        this.dinnerMenu = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Dinner Menu loaded')
-    );
-    subscription.unsubscribe();
+    this.dinnerService
+      .getDinner()
+      .subscribe((data) => (this.dinnerMenu = data));
   }
 }

@@ -11,17 +11,8 @@ export class EnduranceComponent implements OnInit {
   constructor(private EnduranceService: EnduranceService) {}
 
   ngOnInit() {
-    this.getEndurance();
-  }
-
-  getEndurance() {
-    const subscription = this.EnduranceService.getEndurance().subscribe(
-      (data) => {
-        this.EnduranceData = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Endurance data loaded')
+    this.EnduranceService.getEndurance().subscribe(
+      (data) => (this.EnduranceData = data)
     );
-    subscription.unsubscribe();
   }
 }

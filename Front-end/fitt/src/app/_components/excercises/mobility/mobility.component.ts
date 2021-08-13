@@ -11,17 +11,8 @@ export class MobilityComponent implements OnInit {
   constructor(private MobilityService: MobilityService) {}
 
   ngOnInit() {
-    this.getMobility();
-  }
-
-  getMobility() {
-    const subscription = this.MobilityService.getMobility().subscribe(
-      (data) => {
-        this.MobilityData = data;
-      },
-      (err) => console.error(err),
-      () => console.log('Mobility data loaded')
+    this.MobilityService.getMobility().subscribe(
+      (data) => (this.MobilityData = data)
     );
-    subscription.unsubscribe();
   }
 }

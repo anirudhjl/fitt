@@ -1,0 +1,16 @@
+img {
+  width: 10%;
+  height: 5%;
+}
+
+p b {
+  color: #000;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.card {
+  margin: 5px;
+}
