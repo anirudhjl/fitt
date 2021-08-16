@@ -70,3 +70,8 @@ p {
 .img-thumbnail {
   border: none;
 }
+
+.input-icon {
+  background: url(assets/Images/search.png) no-repeat 100%;
+  background-size: 55px;
+}

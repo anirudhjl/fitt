@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GymstrongComponent implements OnInit {
   public GymStrongData: any;
+  public searchValue: string;
 
   constructor(private GymStrongService: GymStrongService) {}
 

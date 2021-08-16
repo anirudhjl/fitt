@@ -7,11 +7,6 @@
   border-radius: 15px;
 }
 
-.input-icon {
-  background: url(../../../assets/Images/search.png) no-repeat 100%;
-  background-size: 55px;
-}
-
 .page {
   display: block;
   margin-left: auto;

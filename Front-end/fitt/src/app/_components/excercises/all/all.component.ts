@@ -7,6 +7,7 @@ import { AllService } from './../../../_services/all/all.service';
 })
 export class AllComponent implements OnInit {
   public AllData: any;
+  public searchValue: string;
 
   constructor(private AllService: AllService) {}
 

@@ -14,3 +14,13 @@ p {
 .card {
   margin: 5px;
 }
+
+.form-control {
+  width: 40%;
+  border-color: #6c757d;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  border-color: transparent;
+}

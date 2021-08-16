@@ -7,6 +7,7 @@ import { EnduranceService } from './../../../_services/endurance/endurance.servi
 })
 export class EnduranceComponent implements OnInit {
   public EnduranceData: any;
+  public searchValue: string;
 
   constructor(private EnduranceService: EnduranceService) {}
 

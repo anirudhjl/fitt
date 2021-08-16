@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobilityComponent implements OnInit {
   public MobilityData: any;
+  public searchValue: string;
 
   constructor(private MobilityService: MobilityService) {}
 

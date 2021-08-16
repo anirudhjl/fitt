@@ -7,6 +7,7 @@ import { BodyWeightService } from 'src/app/_services/bodyWeight/body-weight.serv
 })
 export class BodyweightComponent implements OnInit {
   public BodyWeightData: any;
+  public searchValue: string;
 
   constructor(private BodyWeightService: BodyWeightService) {}
 

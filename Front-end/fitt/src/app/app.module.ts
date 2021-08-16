@@ -44,6 +44,7 @@ import { BreakfastComponent } from './_components/breakfast/breakfast.component'
 import { LunchComponent } from './_components/lunch/lunch.component';
 import { DinnerComponent } from './_components/dinner/dinner.component';
 import { ConfirmationComponent } from './_components/confirmation/confirmation.component';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { ConfirmationComponent } from './_components/confirmation/confirmation.c
     LunchComponent,
     DinnerComponent,
     ConfirmationComponent,
+    SearchfilterPipe,
   ],
   imports: [
     BrowserModule,

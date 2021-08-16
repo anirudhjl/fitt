@@ -7,6 +7,7 @@ import { YogaService } from 'src/app/_services/yoga/yoga.service';
 })
 export class YogaComponent implements OnInit {
   public YogaData: any;
+  public searchValue: string;
 
   constructor(private YogaService: YogaService) {}
 

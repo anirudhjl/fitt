@@ -7,6 +7,7 @@ import { StrengthService } from 'src/app/_services/strength/strength.service';
 })
 export class StrengthComponent implements OnInit {
   public StrengthData: any;
+  public searchValue: string;
 
   constructor(private StrengthService: StrengthService) {}
 

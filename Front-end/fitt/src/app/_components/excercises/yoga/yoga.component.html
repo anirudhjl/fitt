@@ -1,6 +1,16 @@
 <div class="container-fluid">
   <h2>Yoga</h2>
-  <div class="card border-secondary" *ngFor="let exercise of YogaData">
+  <input
+    class="form-control input-icon"
+    [(ngModel)]="searchValue"
+    type="text"
+    placeholder="Search..."
+  />
+  <br />
+  <div
+    class="card border-secondary"
+    *ngFor="let exercise of YogaData | searchfilter: searchValue"
+  >
     <div class="card-body">
       <div class="media row">
         <img class="col align-self-center" src="{{ exercise.imageUrl }}" />
