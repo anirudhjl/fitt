@@ -21,8 +21,10 @@
       <a routerLink="">
         <img src="../../../assets/Images/logo.jpg" alt="logo"
       /></a>
-      <a routerLinkActive routerLink="/login" class="loginButton">Login</a>
-      <a class="loginButton" hidden (click)="logout()">Logout</a>
+      <a routerLinkActive routerLink="/login" class="loginButton" *ngIf="!token"
+        >Login</a
+      >
+      <a class="loginButton" *ngIf="token" (click)="logout()">Logout</a>
     </div>
   </div>
 </mat-drawer-container>

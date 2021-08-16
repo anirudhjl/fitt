@@ -18,6 +18,10 @@ a img {
   right: 0;
 }
 
+.loginButton :hover {
+  cursor: pointer;
+}
+
 .example-sidenav-container {
   position: absolute;
   top: 0;

@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  token = localStorage.getItem('token');
+
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   logout() {
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigate(['/login']);
+    location.reload();
   }
 }
