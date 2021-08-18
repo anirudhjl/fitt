@@ -1,4 +1,4 @@
-form {
+input {
   width: 50%;
 }
 
@@ -17,10 +17,6 @@ a {
 form a:hover,
 form a:active {
   color: #000;
-}
-
-.btn {
-  margin-bottom: 3%;
 }
 
 /* Modal contents*/

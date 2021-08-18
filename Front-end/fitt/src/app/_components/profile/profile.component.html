@@ -1,18 +1,11 @@
 <div class="container-fluid">
-  <form class="form-group">
-    <img
-      src="../../../assets/Images/profile.png"
-      alt="default profile"
-    /><br /><br />
-    <label for="email">Email/mobile number</label>
-    <input type="text" class="form-control" /><br />
-    <label for="Height">Height (in cm)</label>
-    <input type="number" class="form-control" /><br />
-    <label for="Weight">Weight (in kg)</label>
-    <input type="number" class="form-control" /><br />
-    <button class="btn btn-dark">Edit</button>&nbsp;
-    <button class="btn btn-secondary" hidden>Save</button><br />
-  </form>
+  <br />
+  <img
+    src="../../../assets/Images/profile.png"
+    alt="default profile"
+  /><br /><br />
+  <label for="email">Email</label>
+  <input type="text" class="form-control" disabled [value]="username" /><br />
   <a href="#">Change Password</a><br />
   <a href="#">Delete Account</a><br />
   <a id="logout" (click)="logout()">Log out</a><br />

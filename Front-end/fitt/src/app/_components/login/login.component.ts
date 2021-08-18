@@ -1,5 +1,4 @@
 import { Login, User } from './../../_models/User';
-//import { RegistrationService } from './../../_services/registration/registration.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -14,11 +13,7 @@ export class LoginComponent implements OnInit {
   user = new Login();
   validMessage: string = '';
 
-  constructor(
-    // private _services: RegistrationService,
-    private router: Router,
-    private http: HttpClient
-  ) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {}
 
@@ -58,7 +53,6 @@ export class LoginComponent implements OnInit {
           },
           (error: HttpErrorResponse) => {
             console.log(error.status);
-            console.log(this.user.email + ':' + this.user.password);
             this.validMessage = 'Incorrect credentials entered';
           }
         );
