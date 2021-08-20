@@ -30,7 +30,7 @@ import { WorkoutComponent } from '@components/workout/workout.component';
 import { WorkoutTypesComponent } from '@components/workout-types/workout-types.component';
 import { AboutComponent } from '@components/supportPages/about/about.component';
 import { ContactComponent } from '@components/supportPages/contact/contact.component';
-import { SupportComponent } from '@components/supportPages/support/support.component';
+import { FAQComponent } from '@components/supportPages/faq/faq.component';
 import { ErrorComponent } from '@components/error/error.component';
 import { WorkoutPlansComponent } from '@components/workout-plans/workout-plans.component';
 import { MobilityComponent } from '@components/excercises/mobility/mobility.component';
@@ -60,7 +60,7 @@ import { SearchfilterPipe } from './searchfilter.pipe';
     WorkoutTypesComponent,
     AboutComponent,
     ContactComponent,
-    SupportComponent,
+    FAQComponent,
     ErrorComponent,
     WorkoutPlansComponent,
     MobilityComponent,

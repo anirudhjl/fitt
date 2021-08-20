@@ -11,7 +11,7 @@ import { BreakfastComponent } from '@components/breakfast/breakfast.component';
 import { DinnerComponent } from '@components/dinner/dinner.component';
 import { WorkoutComponent } from '@components/workout/workout.component';
 import { AboutComponent } from '@components/supportPages/about/about.component';
-import { SupportComponent } from '@components/supportPages/support/support.component';
+import { FAQComponent } from '@components/supportPages/faq/faq.component';
 import { ContactComponent } from '@components/supportPages/contact/contact.component';
 import { WorkoutTypesComponent } from '@components/workout-types/workout-types.component';
 import { WorkoutPlansComponent } from '@components/workout-plans/workout-plans.component';
@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'support', component: SupportComponent },
+  { path: 'faqs', component: FAQComponent },
   {
     path: 'profile',
     component: ProfileComponent,

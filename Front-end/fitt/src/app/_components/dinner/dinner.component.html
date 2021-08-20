@@ -4,24 +4,23 @@
     <div class="card-body">
       <div class="media row">
         <img class="col align-self-center" src="{{ dinner.imageUrl }}" />
-        <div class="col-sm-6">
+        <div class="col-sm-9">
           <h4 class="card-title">{{ dinner.name }}</h4>
           <div class="card-text">
             <p>{{ dinner.description }}</p>
             <br />
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <p><b>Carbs:</b> {{ dinner.carbs }} g</p>
                 <p><b>Fat:</b> {{ dinner.fat }} g</p>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <p><b>Proteins:</b> {{ dinner.proteins }} g</p>
                 <p><b>Calories:</b> {{ dinner.calories }} Kcal.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col"></div>
       </div>
     </div>
   </div>

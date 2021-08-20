@@ -13,9 +13,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
+  loggedIn() {
+    return localStorage.getItem('token');
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigate(['/login']);
-    location.reload();
   }
 }

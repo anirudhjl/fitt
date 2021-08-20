@@ -14,21 +14,18 @@
     <div class="card-body">
       <div class="media row">
         <img class="col align-self-center" src="{{ exercise.imageUrl }}" />
-        <div class="col-sm-6">
+        <div class="col-sm-9">
           <h4 class="card-title">{{ exercise.name }}</h4>
           <div class="card-text">
             <p>{{ exercise.description }}</p>
             <br />
-            <div class="row">
-              <div class="col-sm-6">
-                <p><b>Reps:</b> {{ exercise.reps }}</p>
-                <p><b>Sets:</b> {{ exercise.sets }}</p>
-                <p><b>Duration:</b> {{ exercise.duration }} s</p>
-              </div>
+            <div class="col-sm-9">
+              <p><b>Reps:</b> {{ exercise.reps }}</p>
+              <p><b>Sets:</b> {{ exercise.sets }}</p>
+              <p><b>Duration:</b> {{ exercise.duration }} s</p>
             </div>
           </div>
         </div>
-        <div class="col"></div>
       </div>
     </div>
   </div>
