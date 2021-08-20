@@ -34,9 +34,6 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     if (this.signinform.valid) {
-      const headers = {
-        responseType: 'text',
-      };
       this.HttpClient.post<any>(
         'http://localhost:8080/api/v1/registration',
         this.user
