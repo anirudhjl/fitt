@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/_models/User';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -9,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
+  private API_URL = environment.API_URL;
   user = new User();
   validMessage: string = '';
 
@@ -35,7 +37,7 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     if (this.signinform.valid) {
       this.HttpClient.post<any>(
-        'http://localhost:8080/api/v1/registration',
+        this.API_URL + '/api/v1/registration',
         this.user
       ).subscribe(
         (data) => console.log(data),

@@ -18,8 +18,8 @@ a img {
   right: 0;
 }
 
-.loginButton :hover {
-  cursor: pointer;
+.loginButton:hover {
+  cursor: pointer !important;
 }
 
 .example-sidenav-container {

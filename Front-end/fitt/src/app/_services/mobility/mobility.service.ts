@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IExercise } from 'src/app/_models/Exercises';
+import { environment } from 'src/environments/environment';
 
 const headers = {
   'Content-Type': 'application/json',
@@ -11,10 +12,12 @@ const headers = {
   providedIn: 'root',
 })
 export class MobilityService {
+  private API_URL = environment.API_URL;
+
   constructor(private http: HttpClient) {}
 
   getMobility() {
-    return this.http.get<IExercise[]>('http://localhost:8080/api/v1/mobility', {
+    return this.http.get<IExercise[]>(this.API_URL + '/api/v1/mobility', {
       headers,
     });
   }
