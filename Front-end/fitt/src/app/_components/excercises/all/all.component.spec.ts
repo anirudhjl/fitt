@@ -1,6 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AllComponent } from './all.component';
+import { SearchfilterPipe } from '../../../searchfilter.pipe';
+import { FormsModule } from '@angular/forms';
 
 describe('AllComponent', () => {
   let component: AllComponent;
@@ -8,9 +10,9 @@ describe('AllComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AllComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, FormsModule],
+      declarations: [AllComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

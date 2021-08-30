@@ -4,7 +4,7 @@ import { BreakfastService } from './_services/breakfast/breakfast.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { AuthService } from './_services/auth/auth.service';
 import { AuthGuardService } from './_services/auth/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { TokenInterceptorService } from './_services/token-interceptor/token-interceptor.service';
 
 //Component imports
 import { LoginComponent } from '@components/login/login.component';
@@ -45,6 +46,7 @@ import { LunchComponent } from './_components/lunch/lunch.component';
 import { DinnerComponent } from './_components/dinner/dinner.component';
 import { ConfirmationComponent } from './_components/confirmation/confirmation.component';
 import { SearchfilterPipe } from './searchfilter.pipe';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -97,9 +99,15 @@ import { SearchfilterPipe } from './searchfilter.pipe';
     DinnerService,
     AuthService,
     AuthGuardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

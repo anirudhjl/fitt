@@ -1,6 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BodyweightComponent } from './bodyweight.component';
+import { SearchfilterPipe } from '../../../searchfilter.pipe';
 
 describe('BodyweightComponent', () => {
   let component: BodyweightComponent;
@@ -8,9 +9,9 @@ describe('BodyweightComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BodyweightComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [BodyweightComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

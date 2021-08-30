@@ -1,5 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SearchfilterPipe } from '../../../searchfilter.pipe';
 import { StrengthComponent } from './strength.component';
 
 describe('StrengthComponent', () => {
@@ -8,9 +9,9 @@ describe('StrengthComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StrengthComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [StrengthComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

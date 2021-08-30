@@ -1,6 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GymstrongComponent } from './gymstrong.component';
+import { SearchfilterPipe } from '../../../searchfilter.pipe';
 
 describe('GymstrongComponent', () => {
   let component: GymstrongComponent;
@@ -8,9 +9,9 @@ describe('GymstrongComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GymstrongComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [GymstrongComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

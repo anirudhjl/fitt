@@ -1,6 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { YogaComponent } from './yoga.component';
+import { SearchfilterPipe } from '../../../searchfilter.pipe';
 
 describe('YogaComponent', () => {
   let component: YogaComponent;
@@ -8,9 +9,9 @@ describe('YogaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ YogaComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [YogaComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

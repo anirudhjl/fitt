@@ -1,13 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { YogaService } from './yoga.service';
+import { TokenInterceptorService } from './token-interceptor.service';
 
-describe('YogaService', () => {
-  let service: YogaService;
+describe('TokenInterceptorService', () => {
+  let service: TokenInterceptorService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({ imports: [HttpClientModule] });
-    service = TestBed.inject(YogaService);
+    service = TestBed.inject(TokenInterceptorService);
   });
 
   it('should be created', () => {

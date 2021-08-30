@@ -1,5 +1,6 @@
+import { SearchfilterPipe } from './../../../searchfilter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EnduranceComponent } from './endurance.component';
 
 describe('EnduranceComponent', () => {
@@ -8,9 +9,9 @@ describe('EnduranceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EnduranceComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [EnduranceComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

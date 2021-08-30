@@ -1,5 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SearchfilterPipe } from '../../../searchfilter.pipe';
 import { MobilityComponent } from './mobility.component';
 
 describe('MobilityComponent', () => {
@@ -8,9 +9,9 @@ describe('MobilityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MobilityComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [MobilityComponent, SearchfilterPipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {

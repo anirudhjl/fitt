@@ -1,5 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ErrorComponent } from './error.component';
 
 describe('ErrorComponent', () => {
@@ -8,9 +8,9 @@ describe('ErrorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErrorComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [ErrorComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
