@@ -22,4 +22,22 @@ describe('ErrorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render page content', () => {
+    const fixture = TestBed.createComponent(ErrorComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.container-fluid p').textContent).toContain(
+      'looking'
+    );
+  });
+
+  it('should render heading', () => {
+    const fixture = TestBed.createComponent(ErrorComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.container-fluid h2').textContent).toContain(
+      'not found'
+    );
+  });
 });

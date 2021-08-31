@@ -20,4 +20,40 @@ describe('FAQComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render heading', () => {
+    const fixture = TestBed.createComponent(FAQComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.container-fluid h2').textContent).toContain(
+      'Frequently Asked Questions'
+    );
+  });
+
+  it('should render page content', () => {
+    const fixture = TestBed.createComponent(FAQComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.container-fluid p').textContent).toContain(
+      'DAY'
+    );
+  });
+
+  it('should not render heading', () => {
+    const fixture = TestBed.createComponent(FAQComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(
+      compiled.querySelector('.container-fluid h2').textContent
+    ).not.toContain('Frequent Question');
+  });
+
+  it('should not render page content', () => {
+    const fixture = TestBed.createComponent(FAQComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(
+      compiled.querySelector('.container-fluid h2').textContent
+    ).not.toContain('trust');
+  });
 });

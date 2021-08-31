@@ -22,4 +22,38 @@ describe('MealsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render heading', () => {
+    const fixture = TestBed.createComponent(MealsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.page').textContent).toContain('Nutrition');
+  });
+
+  it('should not render heading', () => {
+    const fixture = TestBed.createComponent(MealsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.page').textContent).not.toContain(
+      'Nutritions'
+    );
+  });
+
+  it('should render page content', () => {
+    const fixture = TestBed.createComponent(MealsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.page p').textContent).toContain(
+      'malnutrition'
+    );
+  });
+
+  it('should not render page content', () => {
+    const fixture = TestBed.createComponent(MealsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.page p').textContent).not.toContain(
+      'meals'
+    );
+  });
 });

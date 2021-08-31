@@ -42,7 +42,6 @@ const routes: Routes = [
   {
     path: 'meals',
     component: MealsComponent,
-    canActivate: [AuthGuardService],
   },
   {
     path: 'meals/lunch',
@@ -62,17 +61,14 @@ const routes: Routes = [
   {
     path: 'workout',
     component: WorkoutComponent,
-    canActivate: [AuthGuardService],
   },
   {
     path: 'workout/types',
     component: WorkoutTypesComponent,
-    canActivate: [AuthGuardService],
   },
   {
     path: 'workout/plans',
     component: WorkoutPlansComponent,
-    canActivate: [AuthGuardService],
   },
   {
     path: 'workout/endurance',

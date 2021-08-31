@@ -8,9 +8,8 @@ describe('ContactComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
-    })
-    .compileComponents();
+      declarations: [ContactComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,41 @@ describe('ContactComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render heading', () => {
+    const fixture = TestBed.createComponent(ContactComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.container-fluid h2').textContent).toContain(
+      'Contact'
+    );
+  });
+
+  it('should render page content', () => {
+    const fixture = TestBed.createComponent(ContactComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.container-fluid p').textContent).toContain(
+      'help'
+    );
+  });
+
+  it('should not render heading', () => {
+    const fixture = TestBed.createComponent(ContactComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(
+      compiled.querySelector('.container-fluid h2').textContent
+    ).not.toContain('Contacts');
+  });
+
+  it('should not render page content', () => {
+    const fixture = TestBed.createComponent(ContactComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(
+      compiled.querySelector('.container-fluid h2').textContent
+    ).not.toContain('Hyderabad');
   });
 });
